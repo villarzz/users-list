@@ -1,0 +1,21 @@
+<div class="p-6 h-full flex flex-col">
+  <div class="w-1/2 h-full border-r border-zinc-300/50">
+    <p class="text-zinc-100 text-2xl mb-1">Lista de Usuários</p>
+    <div #lista class="mr-4 rounded-lg h-[93%] overflow-y-scroll [scrollbar-width:none] [-ms-overflow-style:none]"
+      style="scrollbar-width: none;">
+      @for(user of users$ | async; track user) {
+      <div class="mb-3 p-4 rounded-lg bg-zinc-700/30 shadow-md hover:bg-zinc-700/50 transition-colors">
+        <p class="text-zinc-200 text-lg font-semibold">{{ user.name }}</p>
+        <p class="text-zinc-400">{{ user.email }}</p>
+      </div>
+      }
+    </div>
+    <div class="sticky bottom-40 flex justify-center">
+      <button (click)="scroll(lista, reachedEnd)"
+        class="bg-white/70 text-black rounded-full flex p-3 shadow-lg cursor-pointer animate-bounce">
+        <ng-icon *ngIf="!reachedEnd" name="heroArrowDown"></ng-icon>
+        <ng-icon *ngIf="reachedEnd" name="heroArrowUp"></ng-icon>
+      </button>
+    </div>
+  </div>
+</div>
