@@ -1,8 +1,8 @@
 import { Observable } from 'rxjs';
 import { Component } from '@angular/core';
-import { AsyncPipe, CommonModule } from '@angular/common';
 import { NgIcon, provideIcons } from '@ng-icons/core';
 import { User } from '../../interfaces/user.interface';
+import { AsyncPipe, CommonModule } from '@angular/common';
 import { UsersService } from '../../services/users.service';
 import { heroArrowDown, heroArrowUp } from '@ng-icons/heroicons/outline';
 
@@ -15,8 +15,8 @@ import { heroArrowDown, heroArrowUp } from '@ng-icons/heroicons/outline';
   styleUrl: './users-list.component.css'
 })
 export class UsersListComponent {
-  users$: Observable<User[]> = this._usersService.getUsers();
   reachedEnd: boolean = false;
+  users$: Observable<User[]> = this._usersService.getUsers();
 
   constructor(private _usersService: UsersService) { }
 

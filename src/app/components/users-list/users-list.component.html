@@ -1,10 +1,10 @@
-<div class="p-6 h-full flex flex-col">
+<div class="p-6 h-full flex">
   <div class="w-1/2 h-full border-r border-zinc-300/50">
     <p class="text-zinc-100 text-2xl mb-1">Lista de Usuários</p>
-    <div #lista class="mr-4 rounded-lg h-[93%] overflow-y-scroll [scrollbar-width:none] [-ms-overflow-style:none]"
+    <div #lista class="mr-4 rounded-lg h-[93%] overflow-y-hidden [scrollbar-width:none] [-ms-overflow-style:none]"
       style="scrollbar-width: none;">
       @for(user of users$ | async; track user) {
-      <div class="mb-3 p-4 rounded-lg bg-zinc-700/30 shadow-md hover:bg-zinc-700/50 transition-colors">
+      <div class="mb-3 p-4 rounded-lg bg-zinc-700/30 shadow-md hover:bg-zinc-700/50 transition-colors cursor-pointer">
         <p class="text-zinc-200 text-lg font-semibold">{{ user.name }}</p>
         <p class="text-zinc-400">{{ user.email }}</p>
       </div>
@@ -17,5 +17,9 @@
         <ng-icon *ngIf="reachedEnd" name="heroArrowUp"></ng-icon>
       </button>
     </div>
+  </div>
+  <div class="w-1/2 h-full flex flex-col items-center justify-center">
+    <img src="assets/illustration.svg" width="400" alt="Ilustração de usuários" />
+    <p class="text-zinc-100 mt-3 text-xl">Selecione um usuário para ver mais informações!</p>
   </div>
 </div>
