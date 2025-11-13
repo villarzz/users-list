@@ -9,5 +9,9 @@ export const routes: Routes = [
   {
     path: 'users-list',
     loadComponent: () => import('./components/users-list/users-list.component').then(m => m.UsersListComponent)
+  },
+  {
+    path:'user-area/:userId',
+    loadComponent: () => import('./components/user-area/user-area.component').then(m => m.UserAreaComponent)
   }
 ];
