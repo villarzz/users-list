@@ -12,4 +12,8 @@ export class UsersService {
   getUsers(): Observable<User[]> {
     return this._http.get<User[]>('https://jsonplaceholder.typicode.com/users')
   }
+
+  getUserById(id: number): Observable<User> {
+    return this._http.get<User>(`https://jsonplaceholder.typicode.com/users/${id}`);
+  }
 }
