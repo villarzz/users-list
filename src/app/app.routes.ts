@@ -12,6 +12,6 @@ export const routes: Routes = [
   },
   {
     path:'user-area/:userId',
-    loadComponent: () => import('./components/user-area/user-area.component').then(m => m.UserAreaComponent)
+    loadChildren: () => import('./components/user-area/user-area.routes').then(m => m.userAreaRoutes)
   }
 ];
