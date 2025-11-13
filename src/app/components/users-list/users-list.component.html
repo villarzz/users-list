@@ -4,7 +4,7 @@
     <div #lista class="mr-4 rounded-lg h-[93%] overflow-y-hidden [scrollbar-width:none] [-ms-overflow-style:none]"
       style="scrollbar-width: none;">
       @for(user of users$ | async; track user) {
-      <div class="mb-3 p-4 rounded-lg bg-zinc-700/30 shadow-md hover:bg-zinc-700/50 transition-colors cursor-pointer">
+      <div class="mb-3 p-4 rounded-lg bg-zinc-700/30 shadow-md hover:bg-zinc-700/50 transition-colors cursor-pointer" [routerLink]="['/user-area', user.id]">
         <p class="text-zinc-200 text-lg font-semibold">{{ user.name }}</p>
         <p class="text-zinc-400">{{ user.email }}</p>
       </div>
