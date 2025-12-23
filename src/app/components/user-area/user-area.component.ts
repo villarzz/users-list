@@ -1,6 +1,6 @@
 import { PhonePipe } from '../../pipes/phone.pipe';
 import { NgIcon, provideIcons } from '@ng-icons/core';
-import { User } from '../../interfaces/user.interface';
+import { IUser } from '../../interfaces/user.interface';
 import { Component, inject, Input } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { UsersService } from '../../services/users.service';
@@ -15,7 +15,7 @@ import { heroArchiveBox, heroArrowLeft, heroArrowTopRightOnSquare, heroNumberedL
   styleUrl: './user-area.component.css'
 })
 export class UserAreaComponent {
-  user !: User;
+  user !: IUser;
   private readonly _usersService = inject(UsersService);
 
   @Input() set userId(id: number) {
