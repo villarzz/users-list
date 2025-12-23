@@ -1,19 +1,5 @@
 # Users List
 
-> Aplicação Angular moderna para visualização e gerenciamento de usuários, suas tarefas, posts e álbuns através da API JSONPlaceholder.
-
----
-
-## 📋 Descrição para o Repositório
-
-**Copie e cole este texto na descrição do repositório:**
-
-```
-Aplicação Angular moderna para visualização e gerenciamento de usuários, suas tarefas, posts e álbuns através da API JSONPlaceholder.
-```
-
----
-
 ## 🎯 Sobre o Projeto
 
 **Este é um projeto de estudo focado no sistema de rotas do Angular.**
