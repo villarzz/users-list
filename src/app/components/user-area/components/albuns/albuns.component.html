@@ -1,0 +1,12 @@
+<div class="flex flex-col max-h-full h-full w-full pl-5">
+  <h1 class="text-zinc-100 text-3xl ml-3">Albums</h1>
+  <div class="border border-zinc-300/50"></div>
+  <div class="grid grid-cols-3 gap-2 w-full overflow-y-auto mt-3">
+    @for(item of albums$ | async; track $index) {
+    <div class="p-4 mb-3 flex flex-col items-center gap-3 rounded-lg bg-zinc-700/30 shadow-md hover:bg-zinc-700/50 transition-colors cursor-pointer">
+      <img [src]="'assets/disco.svg'" class="w-48 h-48 object-cover rounded-lg" />
+      <p class="text-zinc-200 text-lg font-semibold">{{ item.title }}</p>
+    </div>
+    }
+  </div>
+</div>
