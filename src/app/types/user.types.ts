@@ -1,3 +1,3 @@
-import { User } from "../interfaces/user.interface";
+import { IUser } from "../interfaces/user.interface";
 
-export type UsersResponse = User[]
+export type UsersResponse = IUser[]
