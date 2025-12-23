@@ -13,6 +13,10 @@ export const userAreaRoutes: Routes = [
       {
         path: 'todo',
         loadComponent: () => import('./components/todos/todos.component').then(m => m.TodosComponent)
+      },
+      {
+        path: 'albuns',
+        loadComponent: () => import('./components/albuns/albuns.component').then(m => m.AlbunsComponent)
       }
     ]
   }
