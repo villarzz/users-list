@@ -16,7 +16,20 @@ Aplicação Angular moderna para visualização e gerenciamento de usuários, su
 
 ## 🎯 Sobre o Projeto
 
+**Este é um projeto de estudo focado no sistema de rotas do Angular.**
+
 Users List é uma aplicação web desenvolvida em Angular 17 que consome a [JSONPlaceholder API](https://jsonplaceholder.typicode.com/) para exibir informações de usuários e seus respectivos conteúdos. A aplicação oferece uma interface moderna e responsiva construída com Tailwind CSS, permitindo navegar entre diferentes usuários e visualizar suas tarefas (todos), posts e álbuns.
+
+### 🛣️ Sistema de Roteamento - Nível Intermediário/Avançado
+
+O projeto demonstra o uso de técnicas **intermediárias a avançadas** do sistema de rotas do Angular, incluindo:
+
+- **Lazy Loading**: Carregamento sob demanda de componentes com `loadComponent` e `loadChildren` para otimização de performance
+- **Rotas Aninhadas**: Estrutura de rotas pai-filho no componente user-area com múltiplos outlets
+- **Parâmetros de Rota**: Uso de parâmetros dinâmicos (`user-area/:userId`) com binding automático via `withComponentInputBinding()`
+- **Redirects e Navegação**: Configuração de redirecionamentos padrão e rotas vazias
+- **Componentes Standalone**: Implementação moderna com lazy loading de componentes standalone do Angular 17
+- **Code Splitting**: Organização modular com arquivos de rotas separados para melhor manutenibilidade
 
 ## ✨ Funcionalidades
 
