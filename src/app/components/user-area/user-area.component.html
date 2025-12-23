@@ -4,53 +4,55 @@
       <ng-icon name="heroArrowLeft" strokeWidth="3"></ng-icon>
       Voltar
     </a>
-    <div class="mt-5">
-      <p class="text-zinc-100 text-2xl">Informações pessoais</p>
-      <div class="grid grid-cols-2">
-        <div>
-          <p class="text-zinc-300 text-lg mt-3">Nome Completo</p>
-          <p class="text-zinc-100 font-semibold tracking-wide">{{ user.name }}</p>
-        </div>
-        <div>
-          <p class="text-zinc-300 text-lg mt-3">Email</p>
-          <p class="text-zinc-100 font-semibold tracking-wide">{{ user.email }}</p>
-        </div>
-        <div>
-          <p class="text-zinc-300 text-lg mt-3">Usuário</p>
-          <p class="text-zinc-100 font-semibold tracking-wide">{{ user.username }}</p>
-        </div>
-        <div>
-          <p class="text-zinc-300 text-lg mt-3">Telefone</p>
-          <p class="text-zinc-100 font-semibold tracking-wide">{{ user.phone | phone }}</p>
-        </div>
-      </div>
-    </div>
-    <div class="w-[90%] my-4 border border-zinc-300/50"></div>
-    <div>
-      <p class="text-zinc-100 text-2xl">Endereço</p>
-      <div class="grid grid-cols-2">
-        <div>
-          <p class="text-zinc-300 text-lg mt-3">Cidade</p>
-          <p class="text-zinc-100 font-semibold tracking-wide">{{ user.address.city }}</p>
-        </div>
-        <div>
-          <p class="text-zinc-300 text-lg mt-3">Rua</p>
-          <p class="text-zinc-100 font-semibold tracking-wide">{{ user.address.street }}</p>
-        </div>
-        <div>
-          <p class="text-zinc-300 text-lg mt-3">CEP</p>
-          <p class="text-zinc-100 font-semibold tracking-wide">{{ user.address.zipcode }}</p>
-        </div>
-        <div class="flex items-end hover:cursor-pointer hover:underline underline-offset-2 decoration-zinc-100">
-          <a class="flex items-end gap-2"
-            [href]="'https://www.google.com/maps?q=' + user.address.geo.lat + ',' + user.address.geo.lng"
-            target="_blank" rel="noopener noreferrer">
-            <p class="text-zinc-100 text-lg mt-3">Localização</p>
-            <ng-icon class="mb-1" name="heroArrowTopRightOnSquare" size="24" color="oklch(96.7% 0.001 286.375)" />
-          </a>
+    @if(user){
+      <div class="mt-5">
+        <p class="text-zinc-100 text-2xl">Informações pessoais</p>
+        <div class="grid grid-cols-2">
+            <div>
+              <p class="text-zinc-300 text-lg mt-3">Nome Completo</p>
+              <p class="text-zinc-100 font-semibold tracking-wide">{{ user.name }}</p>
+            </div>
+            <div>
+              <p class="text-zinc-300 text-lg mt-3">Email</p>
+              <p class="text-zinc-100 font-semibold tracking-wide">{{ user.email }}</p>
+            </div>
+            <div>
+              <p class="text-zinc-300 text-lg mt-3">Usuário</p>
+              <p class="text-zinc-100 font-semibold tracking-wide">{{ user.username }}</p>
+            </div>
+            <div>
+              <p class="text-zinc-300 text-lg mt-3">Telefone</p>
+              <p class="text-zinc-100 font-semibold tracking-wide">{{ user.phone | phone }}</p>
+            </div>
         </div>
       </div>
-    </div>
+      <div class="w-[90%] my-4 border border-zinc-300/50"></div>
+      <div>
+        <p class="text-zinc-100 text-2xl">Endereço</p>
+        <div class="grid grid-cols-2">
+          <div>
+            <p class="text-zinc-300 text-lg mt-3">Cidade</p>
+            <p class="text-zinc-100 font-semibold tracking-wide">{{ user.address.city }}</p>
+          </div>
+          <div>
+            <p class="text-zinc-300 text-lg mt-3">Rua</p>
+            <p class="text-zinc-100 font-semibold tracking-wide">{{ user.address.street }}</p>
+          </div>
+          <div>
+            <p class="text-zinc-300 text-lg mt-3">CEP</p>
+            <p class="text-zinc-100 font-semibold tracking-wide">{{ user.address.zipcode }}</p>
+          </div>
+          <div class="flex items-end hover:cursor-pointer hover:underline underline-offset-2 decoration-zinc-100">
+            <a class="flex items-end gap-2"
+              [href]="'https://www.google.com/maps?q=' + user.address.geo.lat + ',' + user.address.geo.lng"
+              target="_blank" rel="noopener noreferrer">
+              <p class="text-zinc-100 text-lg mt-3">Localização</p>
+              <ng-icon class="mb-1" name="heroArrowTopRightOnSquare" size="24" color="oklch(96.7% 0.001 286.375)" />
+            </a>
+          </div>
+        </div>
+      </div>
+    }
     <div class="w-[90%] my-4 border border-zinc-300/50"></div>
     <div class="h-full max-h-44 pr-4">
       <p class="text-zinc-100 text-2xl">Mais opções</p>
@@ -63,10 +65,10 @@
           <p class="text-zinc-100 text-lg font-medium">Albums</p>
           <ng-icon name="heroArchiveBox" size="24" class="text-zinc-100" />
         </a>
-        <button class="flex items-center justify-center gap-2 mr-3 bg-white/10 backdrop-blur-md border border-white/20 p-2 rounded-full hover:bg-white/20 transition-all duration-200 hover:scale-105 shadow-lg hover:shadow-xl">
+        <a [routerLink]="['./posts']" class="flex items-center justify-center gap-2 mr-3 bg-white/10 backdrop-blur-md border border-white/20 p-2 rounded-full hover:bg-white/20 transition-all duration-200 hover:scale-105 shadow-lg hover:shadow-xl">
           <p class="text-zinc-100 text-lg font-medium">Posts</p>
           <ng-icon name="heroPencilSquare" size="24" class="text-zinc-100" />
-        </button>
+        </a>
       </div>
     </div>
   </div>
