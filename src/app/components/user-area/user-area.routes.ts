@@ -17,6 +17,10 @@ export const userAreaRoutes: Routes = [
       {
         path: 'albuns',
         loadComponent: () => import('./components/albuns/albuns.component').then(m => m.AlbunsComponent)
+      },
+      {
+        path: 'posts',
+        loadComponent: () => import('./components/posts/posts.component').then(m => m.PostsComponent)
       }
     ]
   }
