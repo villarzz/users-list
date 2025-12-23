@@ -1,0 +1,12 @@
+<div class="flex flex-col max-h-full h-full w-full pl-5">
+  <h1 class="text-zinc-100 text-3xl ml-3">To do</h1>
+  <div class="border border-zinc-300/50"></div>
+  <div class="flex-1 w-full overflow-y-auto mt-3">
+    @for (item of todos$ | async; track $index) {
+      <div class="p-4 mb-3 rounded-lg bg-zinc-700/30 shadow-md hover:bg-zinc-700/50 transition-colors cursor-pointer">
+        <p class="text-zinc-200 text-lg font-semibold">{{ item.title }}</p>
+        <p class="text-zinc-300/50">Status: {{ item.completed ? 'Concluído' : 'Pendente' }}</p>
+      </div>
+    }
+  </div>
+</div>
