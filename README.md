@@ -1,5 +1,7 @@
 # Users List
 
+> Aplicação Angular 17 desenvolvida com foco no aprendizado do sistema de roteamento do framework. Explora rotas aninhadas, lazy loading e parâmetros dinâmicos integrados a chamadas na JSONPlaceholder API para exibir dados de usuários, posts, tarefas e álbuns.
+
 ## 🎯 Sobre o Projeto
 
 **Este é um projeto de estudo focado no sistema de rotas do Angular.**
