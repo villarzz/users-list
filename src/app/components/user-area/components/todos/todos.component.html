@@ -3,10 +3,12 @@
   <div class="border border-zinc-300/50"></div>
   <div class="flex-1 w-full overflow-y-auto mt-3">
     @for (item of todos$ | async; track $index) {
-      <div class="p-4 mb-3 rounded-lg bg-zinc-700/30 shadow-md hover:bg-zinc-700/50 transition-colors cursor-pointer">
-        <p class="text-zinc-200 text-lg font-semibold">{{ item.title }}</p>
-        <p class="text-zinc-300/50">Status: {{ item.completed ? 'Concluído' : 'Pendente' }}</p>
-      </div>
+    <div class="p-4 mb-3 rounded-lg bg-zinc-700/30 shadow-md hover:bg-zinc-700/50 transition-colors cursor-pointer">
+      <p class="text-zinc-200 text-lg font-semibold">{{ item.title }}</p>
+      <p class="text-zinc-300">
+        Status: <span [ngClass]="{'text-green-500/80': item.completed, 'text-red-500/80': !item.completed}">{{ item.completed ? 'Concluído' : 'Pendente' }}</span>
+      </p>
+    </div>
     }
   </div>
 </div>
