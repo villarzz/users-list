@@ -4,13 +4,13 @@ import { IUser } from '../../interfaces/user.interface';
 import { Component, inject, Input } from '@angular/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
 import { UsersService } from '../../services/users.service';
-import { heroArchiveBox, heroArrowLeft, heroArrowTopRightOnSquare, heroNumberedList, heroPencilSquare } from '@ng-icons/heroicons/outline';
+import { heroArchiveBox, heroArrowLeft, heroArrowTopRightOnSquare, heroListBullet, heroPencilSquare } from '@ng-icons/heroicons/outline';
 
 @Component({
   selector: 'app-user-area',
   standalone: true,
   imports: [NgIcon, RouterLink, PhonePipe, RouterOutlet],
-  viewProviders: [provideIcons({ heroArrowLeft, heroArrowTopRightOnSquare, heroNumberedList, heroArchiveBox, heroPencilSquare })],
+  viewProviders: [provideIcons({ heroArrowLeft, heroArrowTopRightOnSquare, heroListBullet, heroArchiveBox, heroPencilSquare })],
   templateUrl: './user-area.component.html',
   styleUrl: './user-area.component.css'
 })
