@@ -3,17 +3,41 @@
   <div class="border border-zinc-300/50"></div>
   <div class="flex-1 w-full overflow-y-auto mt-3">
     @for(item of posts$ | async; track $index){
-    <div
-      class="flex flex-col p-4 mb-3 rounded-lg bg-zinc-700/30 shadow-md hover:bg-zinc-700/50 transition-colors cursor-pointer">
+    <div [ngClass]="selectedPostId !== item.id ? 'hover:bg-zinc-700/50' : ''"
+      class="flex flex-col p-4 mb-3 rounded-lg bg-zinc-700/30 shadow-md transition-colors cursor-pointer">
       <div>
         <p class="text-zinc-200 text-lg font-semibold">{{ item.title }}</p>
         <p class="text-zinc-300/50">Status: {{ item.body }}</p>
       </div>
       <div class="w-full flex justify-end">
-        <button class="mt-2 rounded-full bg-zinc-700 px-6 py-2 text-sm font-medium text-zinc-100 shadow-md transition-all duration-200 hover:bg-zinc-600 hover:shadow-lg active:scale-95 focus:outline-none focus:ring-2 focus:ring-zinc-400 focus:ring-offset-2 focus:ring-offset-zinc-900">
-          Ver Mais
+        <button (click)="openComments(item.id)"
+          class="mt-2 rounded-full bg-zinc-700 px-6 py-2 text-sm font-medium text-zinc-100 shadow-md transition-all duration-200 hover:bg-zinc-600 hover:shadow-lg active:scale-95 focus:outline-none focus:ring-2 focus:ring-zinc-400 focus:ring-offset-2 focus:ring-offset-zinc-900">
+          Ver Comentários
         </button>
       </div>
+      @if(openCommentsSection && selectedPostId === item.id) {
+      <div class="flex flex-col p-4 mb-3 mt-3 rounded-lg bg-zinc-700/30 shadow-md">
+        <p class="text-xl text-zinc-100">Comentários:</p>
+        @for(comment of comments$ | async; track $index) {
+        <div class="mb-3 mt-4 flex items-center justify-between bg-zinc-zinc-700/50 p-3 rounded-lg">
+          <div class="flex-1">
+            <p class="text-zinc-200 text-lg font-semibold">{{ comment.email }}</p>
+            <p class="text-zinc-300/70">{{ comment.body }}</p>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="flex flex-col items-center">
+              <ng-icon name="lucideArrowBigUpDash" size="24" class="text-zinc-100 hover:text-zinc-200"/>
+              <p class="text-sm text-zinc-200">{{numeroAleatorio1a100()}}</p>
+            </div>
+            <div class="flex flex-col items-center">
+              <ng-icon name="lucideHeart" size="24" class="text-red-400 hover:text-red-400/70"/>
+              <p class="text-sm text-red-400">{{numeroAleatorio1a100()}}</p>
+            </div>
+          </div>
+        </div>
+        }
+      </div>
+      }
     </div>
     }
   </div>
